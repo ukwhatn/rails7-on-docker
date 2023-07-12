@@ -53,8 +53,8 @@ gem "sassc-rails"
 gem "image_processing", "~> 1.12"
 
 # for localize
-gem "rails-i18n"
 gem "i18n_generators"
+gem "rails-i18n"
 
 # for read .env
 gem "dotenv-rails"
