@@ -60,25 +60,26 @@ gem "rails-i18n"
 gem "dotenv-rails"
 
 # for discord oauth2
-#gem "omniauth-discord"
+# gem "omniauth-discord"
 
 # for google oauth2
-#gem "omniauth-google-oauth2"
+# gem "omniauth-google-oauth2"
 
 # for github oauth2
-#gem "omniauth-github"
+# gem "omniauth-github"
 
 # csrf protection for omniauth
-#gem "omniauth-rails_csrf_protection"
-
-gem "brakeman"
-gem "bundler-audit"
-gem "rubocop-rails"
+# gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", "1.8.0", platforms: %i[ mri mingw x64_mingw ]
+  gem "brakeman"
+  gem "bundler-audit"
+  gem "debug", "1.8.0", platforms: %i[mri mingw x64_mingw]
   gem "rspec-rails"
+  gem "rubocop"
+  gem "rubocop-performance"
+  gem "rubocop-rails"
   gem "rubocop-rspec"
 end
 
