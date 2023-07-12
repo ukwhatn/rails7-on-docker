@@ -30,7 +30,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 5.0"
+gem "redis", "~> 4.8.1", "< 5"
+gem "redis-actionpack"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -45,10 +46,30 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails", "~> 2.1"
+gem "dartsass-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.12"
+
+# for localize
+gem "rails-i18n"
+gem "i18n_generators"
+
+# for read .env
+gem "dotenv-rails"
+
+# for discord oauth2
+#gem "omniauth-discord"
+
+# for google oauth2
+#gem "omniauth-google-oauth2"
+
+# for github oauth2
+#gem "omniauth-github"
+
+# csrf protection for omniauth
+#gem "omniauth-rails_csrf_protection"
 
 gem "brakeman"
 gem "bundler-audit"

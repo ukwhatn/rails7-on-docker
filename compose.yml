@@ -6,11 +6,11 @@ services:
       - .:/usr/src/app
       - bundle:/usr/local/bundle
     ports:
-      - "3000:3000"
+      - "59011:3000"
     env_file:
       - .env
     environment:
-      - HISTFILE=/usr/src/app/log/.bash_history 
+      - HISTFILE=/usr/src/app/log/.bash_history
     depends_on:
       db:
         condition: service_healthy
@@ -18,10 +18,8 @@ services:
         condition: service_started
   db:
     image: postgres:15
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_PASSWORD=changeme
+    env_file:
+      - .env
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:
@@ -30,7 +28,7 @@ services:
       timeout: 5s
       retries: 30
   redis:
-    image: redis
+    image: redis:7.0
     volumes:
       - redis_data:/data
 
